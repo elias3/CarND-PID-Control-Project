@@ -3,18 +3,16 @@
 Self-Driving Car Engineer Nanodegree Program
 
 This project implements a basic PID controller. The controller controls the steering angle of the car by monitoring the CTE (cross track error).
-Using a manual process of twiddle  on the parameters, the parameters that helped drive the car smoothly were the following:
+Using a manual process of twiddle on the parameters, the parameters that helped drive the car smoothly were the following:
 
-[//]: # (Image References)
-
-[PID]: ./PID_en.svg "PID Controller"
+[//]: # "Image References"
+[pid]: ./PID_en.svg "PID Controller"
 
 - Kp = -0.5, Kp is the proportional gain; a high proportional gain results in a large change in the output for a given change in the error. In our case the error is the cross track error
-- Ki = 0.001, Ki is proportional to the magnitude of the error and the total duration, since it monitors all the erros. Since the accumlated error is high the contribution, it is common that the contribution of this error is multiplied by a small factor 
-- Kd = 0.3, the derevative of the error which is the slope at a given point in time predicts the behavior of the system. Usually this value is kept lower than the Kp value because it can result to high-frequency noise
+- Ki = 0.001, Ki is proportional to the magnitude of the error and the total duration, since it monitors all the erros. Since the accumlated error is high the contribution, it is common that the contribution of this error is multiplied by a small factor
+- Kd = -0.3, the derevative of the error which is the slope at a given point in time predicts the behavior of the system. Usually this value is kept lower than the Kp value because it can result to high-frequency noise
 
-![alt text][PID]
-
+![alt text][pid]
 
 Furthermore the throttle was fixed to 0.1 (instead of the original value of 0.3). This can be further improved by using another PID controller that incorporates the speed and the angle is input.
 
