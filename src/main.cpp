@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
   PID pid;
 
   auto tau_p = -0.5;
-  auto tau_i = 0.001;
-  auto tau_d = -0.3;
+  auto tau_i = -0.0001;
+  auto tau_d = -0.2;
 
   pid.Init(tau_p, tau_i, tau_d);
 
